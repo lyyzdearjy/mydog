@@ -158,7 +158,7 @@ class ClientManager implements I_clientManager {
             let cmdArr = this.app.routeConfig2[data.cmd];
             if (this.serverType === cmdArr[0]) {
                 let msg = this.app.msgDecode(data.cmd, data.msg);
-                this.msgHandler[cmdArr[1]][cmdArr[2]](msg, client.session, this.callBack(client, data.cmd));
+                this.msgHandler[cmdArr[1]][cmdArr[2]](msg, client.session, this.callBack(client, data.cmd, msg.reqId));
             } else {
                 this.doRemote(data, client.session, cmdArr);
             }
@@ -170,12 +170,13 @@ class ClientManager implements I_clientManager {
     /**
      * Callback
      */
-    private callBack(client: I_clientSocket, cmd: number) {
+    private callBack(client: I_clientSocket, cmd: number, reqId: number) {
         let self = this;
         return function (msg: any) {
             if (msg === undefined) {
-                msg = null;
+                msg = {};
             }
+            msg.reqId = reqId;
             let buf = self.app.protoEncode(cmd, msg);
             client.send(buf);
         }
