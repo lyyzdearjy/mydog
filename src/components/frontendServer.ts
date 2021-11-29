@@ -162,9 +162,23 @@ class ClientManager implements I_clientManager {
             } else {
                 this.doRemote(data, client.session, cmdArr);
             }
-        } catch (e) {
+        } catch (e:any) {
             this.app.logger(loggerType.msg, loggerLevel.error, e.stack);
         }
+    }
+
+    handleHttp(msgStr:string, callback:Function) {
+        let data = JSON.parse(msgStr);
+        let cmd = this.app.routeConfig.indexOf(data.cmd);
+        let cmdArr = this.app.routeConfig2[cmd];
+        let self = this;
+        this.msgHandler[cmdArr[1]][cmdArr[2]](data, null, function(msg:any) {
+            if (msg === undefined) {
+                msg = null;
+            }
+            let buf = self.app.msgEncode(cmd, msg);
+            callback(buf);
+        });
     }
 
     /**

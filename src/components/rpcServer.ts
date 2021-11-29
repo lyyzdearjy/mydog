@@ -59,7 +59,7 @@ class RpcServerSocket {
                 this.app.logger(loggerType.frame, loggerLevel.error, `rpcServer -> illegal rpc register, close the rpc socket: ${this.socket.remoteAddress}`);
                 this.socket.close();
             }
-        } catch (e) {
+        } catch (e:any) {
             this.socket.close();
             this.app.logger(loggerType.frame, loggerLevel.error, e.stack);
         }
@@ -95,7 +95,7 @@ class RpcServerSocket {
                 this.app.logger(loggerType.frame, loggerLevel.error, `rpcServer -> illegal data type, close rpc client named: ${this.id}`);
                 this.socket.close();
             }
-        } catch (e) {
+        } catch (e:any) {
             this.app.logger(loggerType.msg, loggerLevel.error, e.stack);
         }
     }

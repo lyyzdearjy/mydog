@@ -187,7 +187,7 @@ export class RpcClientSocket {
             else if (type === define.Rpc_Msg.heartbeat) {
                 this.heartbeatResponse();
             }
-        } catch (e) {
+        } catch (e:any) {
             this.app.logger(loggerType.msg, loggerLevel.error, e.stack);
         }
     }

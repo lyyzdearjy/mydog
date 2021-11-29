@@ -114,6 +114,7 @@ export interface I_someConfig {
 export interface I_clientManager {
     addClient(client: I_clientSocket): void;
     handleMsg(client: I_clientSocket, msg: Buffer): void;
+    handleHttp(msgStr:string, callback:Function):void;
     removeClient(client: I_clientSocket): void;
 }
 

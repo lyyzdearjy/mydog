@@ -233,7 +233,7 @@ export class Master_ServerProxy {
             } else if (data.T === define.Monitor_To_Master.cliMsg) {
                 masterCli.deal_monitor_msg(data);
             }
-        } catch (err) {
+        } catch (err:any) {
             app.logger(loggerType.frame, loggerLevel.error, `master -> handle msg error, close it: ${this.sid}, ${this.socket.remoteAddress}\n${err.stack}`);
             this.socket.close();
         }
@@ -308,7 +308,7 @@ export class Master_ClientProxy {
                 app.logger(loggerType.frame, loggerLevel.error, `master -> the cli illegal data type close it: ${this.socket.remoteAddress}`);
                 this.socket.close();
             }
-        } catch (e) {
+        } catch (e:any) {
             app.logger(loggerType.frame, loggerLevel.error, `master -> cli handle msg err, close it: ${this.socket.remoteAddress}\n ${e.stack}`);
             this.socket.close();
         }
