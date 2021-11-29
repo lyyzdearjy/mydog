@@ -1,62 +1,40 @@
 {
-  "_from": "mydog",
-  "_id": "mydog@2.2.3",
-  "_inBundle": false,
-  "_integrity": "sha512-19bCKx/Ik6aHRozfF37jvePsBIc4uMzK5WcIaJjePTBUEfpSjSqbwEvfRVuN5SeriURq/ZcyBUX6Z4VxMRqB8A==",
-  "_location": "/mydog",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "mydog",
-    "name": "mydog",
-    "escapedName": "mydog",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/mydog/-/mydog-2.2.3.tgz",
-  "_shasum": "8459b3b00d3c99ee0b85a7fc2ea145f73f56f129",
-  "_spec": "mydog",
-  "_where": "D:\\nodejs",
-  "author": {
-    "name": "ahuang"
-  },
-  "bin": {
-    "mydog": "lib/cli.js"
-  },
-  "bugs": {
-    "url": "https://github.com/ahuangege/mydog/issues"
-  },
-  "bundleDependencies": false,
-  "dependencies": {
-    "@types/node": "^12.0.8",
-    "@types/ws": "^6.0.1",
-    "commander": "^2.17.1",
-    "ws": "^7.0.1"
-  },
-  "deprecated": false,
-  "description": "a framework of typescript server",
-  "homepage": "http://www.mydog.wiki",
-  "keywords": [
-    "pomelo",
-    "server",
-    "nodejs"
-  ],
-  "license": "MIT",
-  "main": "lib/mydog.js",
-  "name": "mydog",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ahuangege/mydog.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test   specified\" && exit 1"
-  },
-  "types": "mydog.d.ts",
-  "version": "2.3.0"
-}
+    "author": {
+      "name": "dearjy"
+    },
+    "bin": {
+      "mydog": "lib/cli.js"
+    },
+    "bugs": {
+      "url": "https://github.com/ahuangege/mydog/issues"
+    },
+    "bundleDependencies": false,
+    "dependencies": {
+      "@types/node": "^12.0.8",
+      "@types/ws": "^6.0.1",
+      "commander": "^2.17.1",
+      "ws": "^7.0.1"
+    },
+    "deprecated": false,
+    "description": "a framework of typescript server,mydog fork",
+    "homepage": "http://www.mydog.wiki",
+    "keywords": [
+      "pomelo",
+      "mydog",
+      "server",
+      "nodejs"
+    ],
+    "license": "MIT",
+    "main": "lib/mydog.js",
+    "name": "mydog_reqid",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/lyyzdearjy/mydog"
+    },
+    "scripts": {
+      "test": "echo \"Error: no test   specified\" && exit 1"
+    },
+    "types": "mydog.d.ts",
+    "version": "2.3.1"
+  }
+  
