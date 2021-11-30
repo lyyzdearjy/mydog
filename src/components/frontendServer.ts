@@ -26,6 +26,7 @@ export class FrontendServer {
         protocol.init(this.app);
         let mydog = require("../mydog");
         let connectorConfig = this.app.someconfig.connector || {};
+        console.log("---- Connector :",connectorConfig.connector as any);
         let connectorConstructor: I_connectorConstructor = connectorConfig.connector as any || mydog.connector.Tcp;
         let defaultEncodeDecode: Required<I_encodeDecodeConfig> = protocol.default_encodeDecode;
         let encodeDecodeConfig = this.app.someconfig.encodeDecode || {};

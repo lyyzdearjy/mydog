@@ -1,5 +1,4 @@
 
-
 /**
  * 
  * 官网: https://www.mydog.wiki
@@ -28,6 +27,7 @@ export let version: string;
 export let connector: {
     Tcp: I_connectorConstructor,
     Ws: I_connectorConstructor,
+    Http: I_connectorConstructor,
 }
 
 /**
